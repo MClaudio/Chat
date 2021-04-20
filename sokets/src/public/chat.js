@@ -39,7 +39,7 @@ socket.on("chat:typing", (data) => {
 
 btnSubmit.addEventListener("click", function () {
   if (chatText.value !== null && chatText.value !== '') {
-    console.log("chatText.value", chatText.value)
+    //console.log("chatText.value", chatText.value)
     socket.emit("chat:message", { user: person, message: chatText.value });
 
     chatContent.innerHTML += `

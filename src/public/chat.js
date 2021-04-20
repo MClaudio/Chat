@@ -18,7 +18,7 @@ socket.on("chat:message", (data) => {
   <div class="d-flex flex-row p-3"> <img
   src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30"
   height="30">
-<div class="chat ml-2 p-3">${data.message}</div>
+<div class="chat ml-2 p-3" style="display:flex"><p style="text-transform:uppercase">${data.user}</p>: ${data.message}</div>
 </div>
   `;
 });

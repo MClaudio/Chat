@@ -3,12 +3,12 @@ const path = require('path');
 const socket = require('socket.io')
 
 const app = express();
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 1000);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 const server = app.listen(app.get('port'), () => {
-    console.log('listening on *:5000');
+    console.log('listening on *:1000');
 });
 
 //config websockets

@@ -25,18 +25,18 @@ module.exports = (ws, req) =>{
             case 'username':
                 //store user with select username
                 if(idUsernameToken(data.params.username)){
-                    send(ws, {id: data.id, error: {message: 'username is token'}})
+                    send(ws, {id: data.id, error: {message: 'nombre de usuario ya existe'}})
                 }else{
                     users.push({
                         username: data.params.username,
                         ws: ws,                    
                     });
-                    send(ws, {id: data.id, result: {status: 'success'}})
+                    send(ws, {id: data.id, result: {status: 'exitoso'}})
                 }
                 break;
             
             case 'message':
-                //send message to all conected users
+                //envar el mensaje a todos los usuarios
                 const username = users.find(user => user.ws == ws).username;
                 users.forEach(user => {
                     send(user.ws, {method: 'update', params: {message: data.params.message, username: username}})
